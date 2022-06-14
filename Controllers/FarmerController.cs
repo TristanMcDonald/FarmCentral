@@ -30,7 +30,7 @@ namespace FarmCentral.Controllers
                         //Logging in the Farmer after all checks have been made.
                         farmerDAL.LoginFarmer(farmerObj);
                         //Redirecting to the Index page once signed in.
-                        return RedirectToAction("Index", "Semester");
+                        return RedirectToAction("Index", "Product");
                     }
                 }
                 return RedirectToAction("Login");
