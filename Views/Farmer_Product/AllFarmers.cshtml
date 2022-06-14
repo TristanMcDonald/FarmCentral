@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FarmCentral.Models.Farmer>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">All Farmers</h1>
+
+<p class="text-center">
+    <a asp-action="AddFarmer" class="btn btn-primary">Add new Farmer</a>
+</p>
+
+@*For the display of the farmer's products*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Farmer Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var farmers in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => farmers.Username)</td>
+                <td>
+                <a asp-action="Products" asp-route-id="@farmers.Username" class="btn btn-primary">Products</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
