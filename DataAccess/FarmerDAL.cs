@@ -30,7 +30,7 @@ namespace FarmCentral.DataAccess
             farmer.Password = HashPassword(farmer.Password);
 
             //Adding the new Farmer to the database Farmers (Andrew Troelsen and Philip Japikse, 2017).
-            farmerDAL._context.Farmers.Add(farmer);
+            _context.Farmers.Add(farmer);
             //Save the changes made to the database context.
             _context.SaveChanges();
         }

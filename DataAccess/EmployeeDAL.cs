@@ -30,7 +30,7 @@ namespace FarmCentral.DataAccess
             employee.Password = HashPassword(employee.Password);
 
             //Adding the new Employee to the database employees (Andrew Troelsen and Philip Japikse, 2017).
-            empDAL._context.Employees.Add(employee);
+            _context.Employees.Add(employee);
             //Save the changes made to the database context.
             _context.SaveChanges();
         }
