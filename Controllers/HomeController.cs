@@ -23,6 +23,16 @@ namespace FarmCentral.Controllers
             return View();
         }
 
+        public ActionResult Farmer()
+        {
+            return Redirect("/Farmer/Login");
+        }
+
+        public ActionResult Employee()
+        {
+            return Redirect("/Employee/Login");
+        }
+
         public IActionResult Privacy()
         {
             return View();

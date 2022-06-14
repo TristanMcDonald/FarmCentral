@@ -50,7 +50,7 @@ namespace FarmCentral
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Farmer}/{action=Login}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
