@@ -6,7 +6,8 @@ namespace FarmCentral.Models
     public class Farmer_Product
     {
         [Key]
-        public Guid Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         [ForeignKey("FarmerUsername")]
         public Farmer Farmer { get; set; }
