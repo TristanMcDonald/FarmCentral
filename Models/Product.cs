@@ -7,5 +7,8 @@ namespace FarmCentral.Models
         [Key]
         [Required]
         public string Name { get; set; }
+        [Required]
+        public string Type { get; set; }
+        public double Quantity { get; set; }
     }
 }
