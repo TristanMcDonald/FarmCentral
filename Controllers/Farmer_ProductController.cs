@@ -12,8 +12,8 @@ namespace FarmCentral.Controllers
         //Creating an object of the Farmer_ProductDAL
         public Farmer_ProductDAL farmer_ProductDAL = new Farmer_ProductDAL();
 
-        //GET: Farmer_ProductDAL
-        //Creating an object of the FarmerDAL
+        //GET: farmerDAL
+        //Creating an object of the farmerDAL
         public FarmerDAL farmerDAL = new FarmerDAL();
 
         public IActionResult Index()
@@ -52,16 +52,16 @@ namespace FarmCentral.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddFarmer([Bind] Farmer farmerObj)
+        public IActionResult AddFarmer([Bind] Farmer farmer)
         {
             if (ModelState.IsValid)
             {
-                //Calling the DAL method to add a new farmer to the database.
-                farmerDAL.RegisterNewFarmer(farmerObj);
-                //once the farmer is added redirect to the all farmers view.
+                //Calling the DAL method to add a new farmer.
+                farmerDAL.RegisterNewFarmer(farmer);
+                //once the farmer is added redirect to the Index view.
                 return RedirectToAction("AllFarmers");
             }
-            return View(farmerObj);
+            return View(farmer);
         }
     }
 }
