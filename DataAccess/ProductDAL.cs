@@ -25,6 +25,7 @@ namespace FarmCentral.DataAccess
             Farmer_Product farmer_product = new Farmer_Product();
             farmer_product.FarmerUsername = farmerDAL.GetLoggedInFarmer();
             farmer_product.ProductName = productObj.Name;
+            farmer_product.Quantity = productObj.Quantity;
 
             //Adding the relationship between a specific farmer and their products to the bridging entity (Farmer_Product) table in the database.
             //This will ensure that every Farmer will only see their own data and never that of others.
@@ -52,7 +53,7 @@ namespace FarmCentral.DataAccess
             //Checking if the product which the user has entered exists in the database (Lujan, 2016) & (Andrew Troelsen and Philip Japikse, 2017).
             foreach (var product in _context.Products)
             {
-                ProductExists = product.Name.Equals(ProductName);
+                ProductExists = product.Name.ToLower().Equals(ProductName.ToLower());
                 //If the product is found exit the foreach loop (Lujan, 2016).
                 if (ProductExists == true)
                 {
